@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net7.0-android</TargetFramework>
+    <SupportedOSPlatformVersion>33</SupportedOSPlatformVersion>
+    <OutputType>Exe</OutputType>
+    <Nullable>enable</Nullable>
+    <UseMauiEssentials>true</UseMauiEssentials>
+    <ApplicationId>com.oneb.anistream</ApplicationId>
+    <ApplicationVersion>37</ApplicationVersion>
+    <ApplicationDisplayVersion>1.9.92</ApplicationDisplayVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <GoogleServicesJson Include="google-services.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Httpz" Version="1.1.3" />
+    <PackageReference Include="JCogwheel" Version="1.0.1" />
+    <PackageReference Include="Jerro.FFmpegKit.Min.Android" Version="1.0.0" />
+    <PackageReference Include="Juro" Version="1.1.13" />
+    <PackageReference Include="Octokit" Version="8.1.1" />
+    <PackageReference Include="Square.Picasso" Version="2.71828.0" />
+    <PackageReference Include="Xam.Plugins.Android.ExoPlayer" Version="2.19.1" />
+    <PackageReference Include="Xam.Plugins.Android.ExoPlayer.OkHttp" Version="2.19.1" />
+    <PackageReference Include="Xam.Plugins.Android.ExoPlayer.MediaSession" Version="2.19.1" />
+    <PackageReference Include="Xamarin.Android.Flowlayout" Version="1.0.0.4" />
+    <PackageReference Include="Xamarin.Firebase.Auth" Version="121.1.0" />
+    <PackageReference Include="Xamarin.Firebase.Crashlytics" Version="118.3.2.1" />
+    <PackageReference Include="Jerro.Maui.GoogleClient" Version="1.0.3" />
+    <PackageReference Include="Xamarin.Firebase.Database" Version="120.1.0" />
+  </ItemGroup>
+
+</Project>
