@@ -1,5 +1,5 @@
 <h1 align="center">
-   AniStream
+   The ForbiddenFcking AniStream
 </h1>
 
 <p align="center">
@@ -9,7 +9,7 @@
 
 <p align="center"><a href="https://github.com/jerry08/AniStream/releases"><img src="/.assets/download.png"></a></p>
 
-AniStream is an android application to stream/download your favourite anime. 
+AniStream is an android application. Nothing else. Fck You
 
 <br>
 <a href="https://www.buymeacoffee.com/jerry08"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=jerry08&button_colour=FFDD00&font_colour=000000&font_family=Poppins&outline_colour=000000&coffee_colour=ffffff" /></a>
@@ -19,40 +19,28 @@ AniStream is an android application to stream/download your favourite anime.
 
 <br>
 
-> Please do not attempt to upload AniStream or any of it's forks on Playstore or any other Android appstores on the internet. Doing so, may infringe their terms and conditions. This may result to legal action or immediate take-down of the app.
+> Please do not attempt to upload AniStream or any of it's forks on Playstore or any other Android appstores on the internet. If you do so, You are fcking stupid. I don't fcking own this app, if you upload it, Jerry will be in trouble. 
 
-## Screenshots
+## ScreenShots
+No ScreenShots you dumbass. First build the app. 
 
-<img src="https://github.com/jerry08/AniStream/blob/master/.assets/Screenshot_01.jpg?raw=true" style="width: 23%;margin:16px;" />&nbsp;&nbsp;<img src="https://github.com/jerry08/AniStream/blob/master/.assets/Screenshot_02.jpg?raw=true" style="width: 23%;margin:16px;" />&nbsp;&nbsp;<img src="https://github.com/jerry08/AniStream/blob/master/.assets/Screenshot_03.jpg?raw=true" style="width: 23%;margin:16px;" />&nbsp;&nbsp;<img src="https://github.com/jerry08/AniStream/blob/master/.assets/Screenshot_04.jpg?raw=true" style="width: 23%;margin:16px;" />
-
-<br>
-
-<img src="https://github.com/jerry08/AniStream/blob/master/.assets/Screenshot_05.jpg?raw=true" style="width: 23%;margin:16px;" />&nbsp;&nbsp;<img src="https://github.com/jerry08/AniStream/blob/master/.assets/Screenshot_06.jpg?raw=true" style="width: 23%;margin:16px;" />
 
 ## Description
 
-AniStream parses website data and filter required info, thus It removes the ads for seamless experience. The app doesn't require account creation to use it.
+AniStream doesn't do anything right now. If you want, consider fcking building the application. 
 
 ### Features
 
-* Search Anime
-* Recently Added Episodes
-* Popular Animes
-* Anime Movies
-* Add To Favourites
-* Auto Quality for Video Playback
-* Ads Free Video Playback
-* Online syncing of Favourite list & watched progress (requires login)
+* Steals your Mama.
+* Fcks You
+* Join the community server, we need some members.
+* Donate to Jerry, he needs some money. 
 
-## 💻 Install 
 
-| Platform | Download | Status |
-|----------|----------|--------|
-| Android    |[![Download Button](https://img.shields.io/github/v/release/jerry08/AniStream?color=7885FF&label=Android-Apk&logo=android&style=for-the-badge)](https://github.com/jerry08/AniStream/releases/download/v1.9.89/AniStream-v1.9.89.apk)| ✅ Stable |
 
 ## WANT TO CONTRIBUTE?
 
-- All contributions are welcome, from code to documentation to graphics to design suggestions to bug reports. Please use GitHub to its fullest; contribute Pull Requests, contribute tutorials or other content- whatever you have to offer, we can use it!
+- All contributions are welcome, donate to Jerry. Help me. Get your knowledge to some use on our Discord Server
 
 - You can come hang out with our awesome community and request new features and report any bugs or issue at our discord server too.
 
@@ -66,12 +54,9 @@ AniStream parses website data and filter required info, thus It removes the ads 
 
 ## DISCLAIMER
 
-* AniStream only scrapes links from various websites and makes it easier for users to find anime. 
+* You know the drill, so don't be a child. 
 
-* Furthermore, all of the anime links found in AniStream are taken from various 3rd party anime hosting websites.
-
-* The developers aren't liable for any misuse of any of the contents found inside or outside of the app and cannot be held accountable for the distribution of any of the contents found inside the app. 
+* The developers aren't liable for any misuse of any of the contents found inside or outside of the app and cannot be held accountable for the distribution of any of the contents found inside the app.
 
 * By using AniStream, you comply to the fact that the developer of the app is not responsible for any of the contents found in the app; nonetheless they may or may not be from their legitimate sources. 
 
-* If the internet infringement issues are involved, please contact the source website. The developer does not assume any legal responsibility.
