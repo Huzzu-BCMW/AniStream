@@ -3,31 +3,28 @@
 </h1>
 
 <p align="center">
-   <a href="https://discord.gg/mhxsSMy2Nf"><img src="https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white"></a>
-   <a href="https://github.com/jerry08/AniStream/releases"><img src="https://img.shields.io/github/downloads/jerry08/AniStream/total?color=%233DDC84&logo=android&logoColor=%23fff&style=for-the-badge"></a>
-</p>
 
-<p align="center"><a href="https://github.com/jerry08/AniStream/releases"><img src="/.assets/download.png"></a></p>
 
 AniStream is an android application. Nothing else. Fck You
 
 <br>
-<a href="https://www.buymeacoffee.com/jerry08"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=jerry08&button_colour=FFDD00&font_colour=000000&font_family=Poppins&outline_colour=000000&coffee_colour=ffffff" /></a>
+
+
+### BUT JERRY A COFFEE, YOU REACH PEASANT. 
+
+<a 
+   href="https://www.buymeacoffee.com/jerry08"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=jerry08&button_colour=FFDD00&font_colour=000000&font_family=Poppins&outline_colour=000000&coffee_colour=ffffff" /></a>
 <br>
 
-### 🌟STAR THIS REPOSITORY TO SUPPORT THE DEVELOPER AND ENCOURAGE THE DEVELOPMENT OF THE APPLICATION!
+### 🌟DON'T STAR THIS REPOSITORY. I KNOW YOU AIN'T GOING TO SUPPORT ME
 
-<br>
+Please do not attempt to upload AniStream or any of it's forks on Playstore or any other Android appstores on the internet. If you do so, You are fcking stupid. I don't fcking own this app, if you upload it, Jerry will be in trouble. 
 
-> Please do not attempt to upload AniStream or any of it's forks on Playstore or any other Android appstores on the internet. If you do so, You are fcking stupid. I don't fcking own this app, if you upload it, Jerry will be in trouble. 
-
-## ScreenShots
-No ScreenShots you dumbass. First build the app. 
+## ScreenShots? No ScreenShots you dumbass. First build the app. 
 
 
-## Description
+## Description? AniStream doesn't do anything right now. If you want, consider fcking building the application. 
 
-AniStream doesn't do anything right now. If you want, consider fcking building the application. 
 
 ### Features
 
