@@ -31,7 +31,7 @@ using AlertDialog = AndroidX.AppCompat.App.AlertDialog;
 
 namespace AniStream;
 
-[Activity(Label = "@string/app_name", MainLauncher = true, ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.ScreenSize)]
+[Activity(Label = "@string/app_name",  Icon = "@mipmap/ic_launcher_tv", MainLauncher = true, ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.ScreenSize)]
 public class MainActivity : ActivityBase, ViewPager.IOnPageChangeListener
 {
     private readonly static int PostNotificationsRequestCode = 1005;
