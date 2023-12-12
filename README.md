@@ -10,7 +10,7 @@ AniStream is an android application. Nothing else. Fck You
 <br>
 
 
-### BUY JERRY A COFFEE, YOU REACH PEASANT!!!  
+### BUY JERRY A COFFEE, YOU RICH PEASANT!!!  
 
 <a 
    href="https://www.buymeacoffee.com/jerry08"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=jerry08&button_colour=FFDD00&font_colour=000000&font_family=Poppins&outline_colour=000000&coffee_colour=ffffff" /></a>
