@@ -31,79 +31,45 @@ jobs:
       - name: Install .NET
         uses: actions/setup-dotnet@v2
         with:
-          dotnet-version: 8.0.x
+          dotnet-version: 7.0.x
 
       - name: Install MAUI Workload
         run: dotnet workload install maui --ignore-failed-sources
 
       - name: Restore Dependencies
-        run: dotnet restore Anikin/
+        run: dotnet restore
+
+      - name: Build
+        run: dotnet build AniStream/AniStream.csproj -c Release -f net7.0-android  --no-restore
 
       - name: Publish MAUI Android
         run: >
-            dotnet publish Anikin/
+            dotnet publish AniStream/
             -c Release
-            -f net8.0-android
+            -f net7.0-android
             -p:AndroidKeyStore=true
             -p:AndroidSigningKeyStore=${{ github.workspace }}/signing-key.keystore
             -p:AndroidSigningStorePass="${{ secrets.PASSWORD }}"
             -p:AndroidSigningKeyAlias="DrMedia"
             -p:AndroidSigningKeyPass="${{ secrets.PASSWORD }}"
-            /p:CSharpier_Bypass=true
 
       - name: Rename file
         run: |
           set -e
 
-          mv AniStream/bin/Release/net8.0-android/com.oneb.anikin-Signed.apk Anikin.apk
+          mv AniStream/bin/Release/net7.0-android/com.oneb.anistream-Signed.apk AniStream.apk
         shell: bash
         
       - name: Upload Android Artifact
         uses: actions/upload-artifact@v3
         with:
-          name: android-build
+          name: AniStream
           path: AniStream.apk
-
-  build-windows:
-    runs-on: windows-latest
-    name: Windows Build
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Install .NET
-        uses: actions/setup-dotnet@v2
-        with:
-          dotnet-version: 8.0.x
-
-      - name: Install MAUI Workload
-        run: dotnet workload install maui --ignore-failed-sources
-
-      - name: Restore Dependencies
-        run: dotnet restore AniStream/
-
-      - name: Publish MAUI Windows (x64)
-        run: >
-            dotnet publish Anikin/
-            -c Release
-            -f net8.0-windows10.0.19041.0
-            -p:RuntimeIdentifierOverride=win10-x64
-            -p:WindowsPackageType=None
-            -o build/windows
-            /p:CSharpier_Bypass=true
-
-      - name: Upload Windows Artifact
-        uses: actions/upload-artifact@v2.3.1
-        with:
-          name: windows-ci-build
-          path: build/windows/
 
   deploy:
     if: ${{ github.event_name == 'push' && github.ref_type == 'tag' }}
-
-    needs: [build-android, build-windows]
+    needs: build-android
     runs-on: ubuntu-latest
-
     permissions:
       actions: read
       contents: write
@@ -119,31 +85,13 @@ jobs:
           echo $TAG_NAME
           VERSION="$(echo $TAG_NAME | tr -d v)"
           echo "VERSION=$VERSION" >> $GITHUB_ENV
-          echo "PACKAGE_NAME=${{ github.event.repository.name }}-$TAG_NAME" >> $GITHUB_ENV
-          echo "WINDOWS_PACKAGE_NAME=${{ github.event.repository.name }}-windows-$TAG_NAME" >> $GITHUB_ENV
-          Prerelease_Param=""
-          if [[ $TAG_NAME == *"-pre"* || $TAG_NAME == *"-beta"* || $TAG_NAME == *"-alpha"* ]]; then
-            Prerelease_Param="--prerelease"
-          fi
-          echo $Prerelease_Param
-          echo "Prerelease_Param=$Prerelease_Param" >> $GITHUB_ENV
+          echo "PACKAGE_NAME=${{ github.event.repository.name }}-$TAG_NAME.apk" >> $GITHUB_ENV
 
-      - name: Download Android artifact
+      - name: Download artifacts
         uses: actions/download-artifact@v3
         with:
-          name: android-build
-          path: AniStream.apk
-
-      - name: Download Windows artifacts
-        uses: actions/download-artifact@v3
-        with:
-          name: windows-ci-build
-          path: build/windows/
-
-      - name: Create package
-        # Change into the artifacts directory to avoid including the directory itself in the zip archive
-        working-directory: build/windows/
-        run: zip -r ../AniStream-windows.zip .
+          name: AniStream
+          path: AniStream
 
       - name: Set body
         run: |
@@ -157,30 +105,18 @@ jobs:
         run: |
           set -e
 
-          mv build/AniStream.apk ${{ env.PACKAGE_NAME }}.apk
+          mv AniStream/AniStream.apk ${{ env.PACKAGE_NAME }}
 
       - name: Create release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: >
           gh release create "${{ github.ref_name }}"
-          "${{ env.PACKAGE_NAME }}.apk"
-          "${{ env.WINDOWS_PACKAGE_NAME }}.zip"
+          "${{ env.PACKAGE_NAME }}"
           --repo "${{ github.event.repository.full_name }}"
           --title "${{ env.VERSION }}"
           --notes "${{ env.TAG_MESSAGE2 }}"
           --verify-tag
-          ${{ env.Prerelease_Param }}
-
-      - name: Delete Old Pre-Releases
-        id: delete-pre-releases
-        uses: sgpublic/delete-release-action@master
-        with:
-          pre-release-drop: true
-          pre-release-keep-count: 3
-          pre-release-drop-tag: true
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   notify:
     needs: deploy
@@ -196,8 +132,7 @@ jobs:
         run: |
           TAG_NAME="${{ github.ref_name }}"
           echo "$TAG_NAME"
-          echo "PACKAGE_NAME=${{ github.event.repository.name }}-$TAG_NAME" >> $GITHUB_ENV
-          echo "WINDOWS_PACKAGE_NAME=${{ github.event.repository.name }}-windows-$TAG_NAME" >> $GITHUB_ENV
+          echo "PACKAGE_NAME=${{ github.event.repository.name }}-$TAG_NAME.apk" >> $GITHUB_ENV
 
       - name: Set variables 2
         run: |
@@ -224,5 +159,5 @@ jobs:
             {
               "username": "Notifications",
               "avatar_url": "https://raw.githubusercontent.com/${{ github.event.repository.full_name }}/master/favicon.png",
-              "content": "**${{ github.event.repository.name }}** new version released!\nVersion: `${{ github.ref_name }}`\n\n${{ env.RELEASE_BODY }}\n\nDownload for Android: <${{ github.event.repository.html_url }}/releases/download/${{ github.ref_name }}/${{ env.PACKAGE_NAME }}.apk>\nDownload for Windows: <${{ github.event.repository.html_url }}/releases/download/${{ github.ref_name }}/${{ env.WINDOWS_PACKAGE_NAME }}.zip>"
+              "content": "**${{ github.event.repository.name }}** new version released!\nVersion: `${{ github.ref_name }}`\n\n${{ env.RELEASE_BODY }}\n\nDownload: <${{ github.event.repository.html_url }}/releases/download/${{ github.ref_name }}/${{ env.PACKAGE_NAME }}>"
             }
